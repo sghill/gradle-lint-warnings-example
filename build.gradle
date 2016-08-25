@@ -1,0 +1,20 @@
+buildscript {
+  repositories { jcenter() }
+  dependencies {
+    classpath 'com.netflix.nebula:nebula-project-plugin:latest.release'
+    classpath 'com.netflix.nebula:gradle-lint-plugin:latest.release'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'nebula.lint'
+apply plugin: 'nebula.integtest'
+
+repositories { jcenter() }
+
+dependencies {
+    testCompile 'junit:junit:latest.release'
+}
+
+gradleLint.rules += 'all-dependency'
+
